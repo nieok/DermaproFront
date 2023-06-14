@@ -1,0 +1,67 @@
+﻿
+@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="Dermapro" />
+    <meta name="description" content="" />
+    <meta Name="author" content="Dermapro">
+    <meta property="og:title" content="Dermapro" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Dermapro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:card" content="Dermapro" />
+    <meta name="twitter:title" content="Dermapro" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="@Url.Content("~/Content/images/favicon.ico")" />
+    <link href="@Url.Content("~/Content/css/plugins.css?v=1")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/cust.css?v=11")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/css/styles.css?v=1632")" rel="stylesheet" />
+</head>
+
+
+
+<body @Html.Raw(ViewBag.BodyAttributes)>
+
+
+    <div id="wrapper">
+        @{Html.RenderPartial("header");}
+        <div id="content">
+            @RenderBody()
+        </div>
+         @{Html.RenderPartial("footer");}  
+         @{Html.RenderPartial("subscribePopup");}  
+         @{Html.RenderPartial("bookPopup");}  
+         @{Html.RenderPartial("askQuestion");}
+        
+ 
+        
+    </div>
+
+    <script type="text/javascript" src="@(Url.Content("~/Scripts/plugins.js?v=1"))"></script>
+    <script type="text/javascript" src="@(Url.Content("~/Scripts/utils.js?v=1"))"></script>
+    <script type="text/javascript" src="@(Url.Content("~/Scripts/myscript.js?v=132"))"></script>
+
+
+</body>
+</html>
+
+
+

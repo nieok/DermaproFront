@@ -1,0 +1,554 @@
+﻿@model  Dermapro.Models.HomePageModel
+
+@{
+    ViewBag.Title = "Dermapro";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+<h1 class="hiddenHeader">Dermapro</h1>
+
+@if (Model.HomeSlideShow != null)
+{
+    <div class="Slideshow">
+        <div class="screen">
+            <ul class="swiper-wrapper">
+                @foreach (var item in Model.HomeSlideShow.SubPageItem)
+                {
+                    <li class="swiper-slide">
+                        <a href="@item.Link" class="item">
+                            <div class="pic">
+                                <img class="fordesktop" alt="@Html.Raw(item.title)" loading="lazy" src="@item.imgSrc" />
+                                <img class="formobile" alt="@Html.Raw(item.title)" loading="lazy" src="@item.imgSrc" />
+                            </div>
+                            <div class="data">
+                                <div class="container">
+                                    <div class="info">
+                                        <h2 class="titre">@Html.Raw(item.title)</h2>
+                                        <div class="more">
+                                            <div class="custbtn transparent">@Html.Raw(item.labelLink)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                }
+
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+}
+
+
+@if (Model.HomeOverview != null)
+{
+    <div class="Overview">
+        <div class="inner wow">
+            <div class="container">
+                <ul class="cols">
+                    <li>
+                        <ul class="info">
+                            @foreach (var item in Model.HomeOverview.SubPageItem)
+                            {
+                                <li>
+                                    <h3 class="caption">
+                                        @Html.Raw(item.title) <a href="@Url.Content("~/"+item.Link)" class="link"> @Html.Raw(item.labelLink)</a>
+                                    </h3>
+                                </li>
+                            }
+
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="more">
+                            <a href="@Url.Content("~/"+Model.HomeOverview.Link)" class="custbtn black">@Html.Raw(Model.HomeOverview.labelLink)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.HomeWeekProduct != null)
+{
+    <div class="ourproducts">
+        <div class="container wow">
+            <div class="head">
+                <h4 class="title">@Model.HomeWeekProduct.title</h4>
+            </div>
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    @foreach (var item in Model.HomeWeekProductItem)
+                    {
+                        <li class="swiper-slide">
+                            <a href="@item.ExternalLink" class="prditem">
+                                <div class="prdinfo">
+                                    <h4 class="prdname">@Html.Raw(item.title)</h4>
+                                    <h5 class="prdcaption">@Html.Raw(item.subtitle)</h5>
+                                </div>
+                                <div class="more">
+                                    <div class="prdvalue">@Html.Raw(item.Price)</div>
+                                </div>
+                                <div class="photo"><img loading="lazy" alt="@Html.Raw(item.title)" src="@item.imgSrc" /></div>
+                            </a>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+}
+
+@if (Model.Homecategories != null)
+{
+    <div class="itemlisting v2 ">
+        <!-- "loading" class on itemlisting -->
+        <div class="container">
+            <ul class="grid">
+                @foreach (var item in Model.HomeCategoryItem)
+                {
+                    <li class="wow">
+                        <div class="item">
+                            <div class="pic">
+                                <img alt="treatment" loading="lazy" src="@item.imgSrc" />
+                                <div class="holder">
+                                    <h2 class="name">@Html.Raw(item.title)</h2>
+                                </div>
+                            </div>
+                            <div class="pop">
+                                <div class="inside">
+                                    <div class="inner">
+                                        <div class="in">
+                                            <h2 class="caption">@Html.Raw(item.title)</h2>
+                                            <div class="text">@Html.Raw(item.description)</div>
+                                            <a href="@item.link" class="more"><span>@item.labelLink</span></a>
+                                            <div class="cloze"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="boxlink fordesktop" href="@item.link"></a>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+
+
+<section class="section_about">
+
+    <div class="brandSection">
+        <div class="container wow">
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a class="item selected">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor1.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor4.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor3.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+
+
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor6.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor5.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor2.png")" alt="sponsor" /></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Featured">
+        <div class="container">
+            <ul class="grp wow">
+                <li>
+                    <div class="info">
+                        <h4 class="title">About Dermaceutic</h4>
+                        <div class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</div>
+                    </div>
+                    <div class="more">
+                        <a href="@Url.Content("~/treatments")" class="link">discover all  products</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="ourproducts">
+                        <div class="screen">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="@Url.Content("~/details")" class="prditem">
+                                        <div class="prdinfo">
+                                            <h4 class="prdname">Dermaceutic</h4>
+                                            <h5 class="prdcaption">Acne-prone skin night cream</h5>
+                                        </div>
+                                        <div class="more">
+                                            <div class="prdvalue blue">$59.80</div>
+                                        </div>
+                                        <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/prd3.png")" /></div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="@Url.Content("~/details")" class="prditem">
+                                        <div class="prdinfo">
+                                            <h4 class="prdname">Dermaceutic</h4>
+                                            <h5 class="prdcaption">Age Defense Serum</h5>
+                                        </div>
+                                        <div class="more">
+                                            <div class="prdvalue blue">$59.80</div>
+                                        </div>
+                                        <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/prd1.png")" /></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</section>
+
+@if (Model.HomeBlackBox != null)
+{
+    <div class="Categs">
+        <div class="bgimg">
+            <img class="fordesktop" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/blackbg_1.jpg")" />
+            <img class="formobile" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/blackbg_2.jpg")" />
+        </div>
+        <div class="container">
+            <div class="screen">
+                <ul class="list">
+                    @foreach (var item in Model.HomeBlackBox.SubPageItem)
+                    {
+                        <li>
+                            <a class="item">
+                                <div class="icon"><img alt="@Html.Raw(item.title)" loading="lazy" src="@item.imgSrc" /></div>
+                                <h5 class="name">@Html.Raw(item.title)</h5>
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+}
+
+@if (Model.HomeBlogs != null)
+{
+    <div class="desktop_blogswiper">
+        <div class="container wow">
+            <ul class="cols">
+                <li>
+                    <div class="top">
+                        <h5 class="title">Blog</h5>
+                        <div class="more">
+                            <a href="@Model.HomeBlogs.Link" class="link">@Html.Raw(Model.HomeBlogs.labelLink)</a>
+                        </div>
+                    </div>
+
+                    <div class="animation animation1">
+                        <div class="screen">
+                            <ul class="swiper-wrapper">
+                                @foreach (var item in Model.BlogHomePageItem.Where(d => d.id % 2 != 0).Take(2))
+                                {
+                                    <li class="swiper-slide">
+                                        <a href="@Url.Content("~/article")" class="item">
+                                            <div class="pic"><img loading="lazy" alt="@item.title" src="@item.imgSrc" /></div>
+                                            <div class="info">
+                                                <div class="category">
+                                                    <div class="label">@item.BlogCategory</div>
+                                                </div>
+                                                <h6 class="caption">@Html.Raw(item.title)</h6>
+                                                <div class="text">
+                                                    @Html.Raw(item.smallDescription)
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="animation animation2">
+                        <div class="screen">
+                            <ul class="swiper-wrapper">
+                                @foreach (var item in Model.BlogHomePageItem.Where(d => d.id % 2 == 0).Take(2))
+                                {
+                                    <li class="swiper-slide">
+                                        <a href="@Url.Content("~/article")" class="item">
+                                            <div class="pic"><img loading="lazy" alt="@item.title" src="@item.imgSrc" /></div>
+                                            <div class="info">
+                                                <div class="category">
+                                                    <div class="label">@item.BlogCategory</div>
+                                                </div>
+                                                <h6 class="caption">@Html.Raw(item.title)</h6>
+                                                <div class="text">
+                                                    @Html.Raw(item.smallDescription)
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="controls">
+                <div class="custprev"></div>
+                <div class="custnext"></div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.HomeSponsors != null)
+{
+    <div class="Sponsors v3">
+        <div class="container wow">
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    @foreach (var item in Model.HomeSponsors.Gallery)
+                    {
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@item.image" alt="@item.image" /></div>
+                            </a>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (Model.Homecafe != null)
+{
+    <div class="Discover wow">
+        <div class="bgimg">
+            <img class="fordesktop" alt="Dermapro cafe" loading="lazy" src="@Model.Homecafe.imgSrc" />
+            <img class="formobile" alt="Dermapro cafe" loading="lazy" src="@Model.Homecafe.imgSrc" />
+        </div>
+        <div class="container">
+            <div class="wrap ">
+                <div class="holder">
+                    <div class="logo">
+                        <img alt="Dermapro cafe" loading="lazy" src="@Model.Homecafe.imgSrcSecondary" />
+                    </div>
+                    <div class="text">
+                       @Html.Raw(Model.Homecafe.smallDescription)
+                    </div>
+                    <div class="more">
+                        <a href="@Model.Homecafe.Link" class="custbtn transparent">@Model.Homecafe.labelLink</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.HomeHighest!=null)
+{
+    <div class="ourproducts">
+        <div class="container wow">
+            <div class="head">
+                <h4 class="title">Offering the highest standards of products</h4>
+            </div>
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Solgar</h4>
+                                <h5 class="prdcaption">Female multiple dietary supplement</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion4.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Mesoestetic </h4>
+                                <h5 class="prdcaption">Mesoestetic HA densimatrix</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion3.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Eneomey</h4>
+                                <h5 class="prdcaption">Eneomey Hyaluronic Masque</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion2.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Mesoestetic </h4>
+                                <h5 class="prdcaption">Mesoestetic energy C eye contour</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion1.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Mesoestetic </h4>
+                                <h5 class="prdcaption">Mesoestetic HA densimatrix</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion3.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Eneomey</h4>
+                                <h5 class="prdcaption">Eneomey Hyaluronic Masque</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion2.png")" /></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/details")" class="prditem">
+                            <div class="prdinfo">
+                                <h4 class="prdname">Mesoestetic </h4>
+                                <h5 class="prdcaption">Mesoestetic energy C eye contour</h5>
+                            </div>
+                            <div class="more">
+                                <div class="prdvalue blue">$59.80</div>
+                            </div>
+                            <div class="photo"><img loading="lazy" alt="product" src="@Url.Content("~/Content/images/lotion1.png")" /></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+}
+
+    <section class="final">
+
+        <div class="ourcards">
+            <div class="container wow">
+                <ul class="grp">
+                    <li>
+                        <div class="info">
+                            <h6 class="title">The gift of wellness</h6>
+                            <div class="more">
+                                <a class="custbtn transparent">get your gift card today</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <ul class="cards">
+                            <li><a class="pic"> <img alt="card" loading="lazy" src="@Url.Content("~/Content/images/card1.png")" /></a></li>
+                            <li><a class="pic"> <img alt="card" loading="lazy" src="@Url.Content("~/Content/images/card3.png")" /></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="visitUs">
+            <div class="container wow">
+                <div class="wrap">
+                    <div class="bgimg">
+                        <img class="fordesktop" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/place_1.jpg")" />
+                        <img class="formobile" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/place_2.jpg")" />
+                    </div>
+                    <div class="holder">
+                        <h6 class="title">Visit us</h6>
+                        <ul class="grp">
+                            <li>
+                                <div class="item">
+                                    <div class="icon"><i class="fa fa-map-marker"></i></div>
+                                    <div class="text">
+                                        Georges Haddad Street, Saifi Village Beirut Central District Beirut – Lebanon
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="icon"><i class="fa fa-map-marker"></i></div>
+                                    <div class="text">
+                                        Byblos – Jounieh Highway Sfeir Center 3rd & 4th floor Byblos - Lebanon
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>

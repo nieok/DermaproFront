@@ -1,0 +1,110 @@
+﻿
+@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+    List<Dermapro.Models.CategoryMenu> categoryMenu = ViewBag.categoryMenu;
+}
+
+
+<header>
+    <div class="container">
+        <div class="wrap">
+            <a href="@Url.Content("~/home")" class="logo"><img loading="lazy" alt="Dermapro" src="@Url.Content("~/Content/images/logo.png")"/></a>
+        
+        <ul class="holder">
+            <li>
+             <div class="menuwrap">
+                 <div class="inner">
+                      <ul class="menu">
+                    <li><a href="@Url.Content("~/about")" class="link @(("about" == controller) ? "selected" : "")">WHO WE ARE</a></li>
+                    <li><a name="dropdownmenu1" class="link @(("Services" == controller || "details" == controller) ? "selected" : "")">Services</a></li>
+                    <li><a href="@Url.Content("~/about")" class="link @(("center" == controller) ? "selected" : "")">shop</a></li>
+                    <li><a href="@Url.Content("~/blog")" class="link @(("blog" == controller) ? "selected" : "")">THE PRO'S BLOG</a></li>
+                </ul>
+                       <ul class="sub formobile" >
+                    <li><a href="@Url.Content("~/book")" class="sublink @(("book" == controller) ? "selected" : "")">book a service</a></li>
+                    <li><a href="@Url.Content("~/privacypolicy")" class="sublink @(("privacypolicy" == controller) ? "selected" : "")">Privacy Policy</a></li>
+                    <li><a href="@Url.Content("~/cookiespolicy")" class="sublink @(("cookiespolicy" == controller) ? "selected" : "")">Cookies Policy</a></li>
+                    <li><a href="" class="sublink">d cafe</a></li>
+                    </ul>
+                       <div class="closemenu" onclick="closemenu()"></div>
+                     </div>
+               </div>
+            </li>
+            <li>
+                <a class="shopbtn"><img loading="lazy"  src="@Url.Content("~/Content/images/cart_icon.png")"/></a>
+            </li>
+            <li>
+                <a href="@Url.Content("~/book")" class="bookbtn">book a service</a>
+            </li>
+            <li class="formobile">
+                <div class="openmenu" onclick="openmenu()"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="21.5" viewBox="0 0 29 21.5"><g transform="translate(-345.5 -20.25)"><line x1="29" transform="translate(345.5 21)" fill="none" stroke="#000" stroke-width="1.5"/><line x1="29" transform="translate(345.5 31)" fill="none" stroke="#000" stroke-width="1.5"/><line x1="29" transform="translate(345.5 41)" fill="none" stroke="#000" stroke-width="1.5"/></g></svg></div>
+            </li>
+        </ul>
+        
+        </div>
+    </div>
+</header>
+
+<nav name="dropdownmenu1" class="dropdownmenu">
+    <div class="container">
+        <div class="hold">
+            <div class="top formobile">
+                <div onclick="closeDropdownMenu()" class="back"></div>
+                <div class="name">Services</div>
+            </div>
+            <ul class="cols">
+                <li>
+                    <div class="subwrap">
+                        @foreach (var category in categoryMenu)
+                        {
+                    <ul class="submenu">
+                        <li><a class="category">@Html.Raw(category.title)</a></li>
+                        @foreach (var subcategory in category.SubcategoryMenu)
+                        {
+                        <li><a href="@subcategory.link" class="item">@Html.Raw(subcategory.title)</a></li>
+                        }
+                   
+                    </ul>
+                    }
+               
+                   </div>
+                </li>
+                <li>
+                    <ul class="media">
+                        <li>
+                            <a href="@Url.Content("~/about")" class="itemmedia">
+                                <div class="pic"><img alt="treatment" loading="lazy" src="@Url.Content("~/Content/images/mask1.jpg")"/></div>
+                                <div class="info">
+                                    <div class="inside">
+                                        <div class="caption">About Our Services</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="@Url.Content("~/about")" class="itemmedia">
+                                <div class="pic"><img alt="treatment" loading="lazy" src="@Url.Content("~/Content/images/mask2.jpg")"/></div>
+                                 <div class="info">
+                                    <div class="inside">
+                                         <div class="caption">How To Be Your Best Self</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="exit fordesktop" onclick="closeDropdownMenu()"></div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<ul class="Options">
+    <li><a data-target="#bookPopup" data-toggle="modal" class="item"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="63" viewBox="0 0 63 63"> <defs> <filter id="Ellipse_6" x="0" y="0" width="63" height="63" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="3" result="blur"/> <feFlood flood-opacity="0.161"/> <feComposite operator="in" in2="blur"/> <feComposite in="SourceGraphic"/> </filter> </defs> <g id="Group_74" data-name="Group 74" transform="translate(-1506 -734)"> <g id="Group_9" data-name="Group 9" transform="translate(0 -57)"> <g transform="matrix(1, 0, 0, 1, 1506, 791)" filter="url(#Ellipse_6)"> <circle id="Ellipse_6-2" data-name="Ellipse 6" cx="22.5" cy="22.5" r="22.5" transform="translate(9 6)" fill="#1ba6d2"/> </g> <g id="noun-appointment-3235706" transform="translate(1428.16 774.289)"> <path id="Path_48" data-name="Path 48" d="M118.821,182.024v11.1c0,.505,0,1.011,0,1.516,0,.028,0,.056,0,.083.009-.063.016-.123.026-.185a.656.656,0,0,1-.039.151l.07-.167-.042.081c-.053.1.111-.132.032-.046s.151-.088.046-.032c-.028.014-.053.03-.081.042l.167-.07a.654.654,0,0,1-.151.039l.185-.025c-.183.016-.371,0-.552,0H100.922c-.241,0-.48,0-.721,0a.637.637,0,0,1-.093,0l.185.025a.654.654,0,0,1-.151-.039l.167.07-.081-.042c-.1-.053.132.111.046.032s.088.151.032.046c-.014-.028-.03-.053-.042-.081l.07.167a.655.655,0,0,1-.039-.151c.009.063.016.123.026.185-.012-.128,0-.26,0-.387V183.594c0-.515.014-1.029,0-1.544v-.023l-.7.7h19.085c.26,0,.517,0,.777,0h.032a.7.7,0,1,0,0-1.391H100.43c-.26,0-.517,0-.777,0h-.032a.705.705,0,0,0-.7.7V194.6a1.153,1.153,0,0,0,0,.128,1.283,1.283,0,0,0,.547.967,1.221,1.221,0,0,0,.7.216c.248.007.5,0,.747,0h17.858c.063,0,.128,0,.19,0a1.269,1.269,0,0,0,1.247-1.247V182.021a.7.7,0,0,0-.7-.7.712.712,0,0,0-.7.7Z" transform="translate(-0.082 -140.398)" fill="#fff" stroke="#fff" stroke-width="0.4"/> <path id="Path_49" data-name="Path 49" d="M198.809,38.746V35.407a.7.7,0,0,0-1.391,0v3.339a.7.7,0,0,0,1.391,0Z" transform="translate(-94.398)" fill="#fff" stroke="#fff" stroke-width="0.4"/> <path id="Path_50" data-name="Path 50" d="M469.77,35.41v3.339a.7.7,0,1,0,1.391,0V35.41a.7.7,0,1,0-1.391,0Z" transform="translate(-355.203 -0.003)" fill="#fff" stroke="#fff" stroke-width="0.4"/> <path id="Path_51" data-name="Path 51" d="M118.74,74.806v4.02l.7-.7H100.351c-.26,0-.517,0-.777,0h-.032l.7.7V75.281c0-.179-.012-.362,0-.54-.009.063-.016.123-.026.185a.655.655,0,0,1,.039-.151l-.07.167.042-.081c.053-.1-.111.132-.032.046s-.151.088-.046.032c.028-.014.053-.03.081-.042l-.167.07a.655.655,0,0,1,.151-.039l-.185.026c.183-.016.371,0,.552,0h17.557c.241,0,.48,0,.721,0a.637.637,0,0,1,.093,0l-.185-.026a.655.655,0,0,1,.151.039l-.167-.07.081.042c.1.053-.132-.111-.046-.032s-.088-.151-.032-.046c.014.028.03.053.042.081l-.07-.167a.655.655,0,0,1,.039.151c-.009-.063-.016-.123-.026-.185a.586.586,0,0,1,0,.065.7.7,0,1,0,1.391,0,1.271,1.271,0,0,0-1.247-1.247H100.1a1.267,1.267,0,0,0-1.245,1.183c-.021.278,0,.563,0,.842v3.246a.705.705,0,0,0,.7.7h19.085c.26,0,.517,0,.777,0h.032a.705.705,0,0,0,.7-.7v-4.02a.7.7,0,0,0-1.391,0Z" transform="translate(0 -37.2)" fill="#fff" stroke="#fff" stroke-width="0.4"/> </g> </g> </g> </svg></a></li>
+    <li><a class="item"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="63" viewBox="0 0 63 63"> <defs> <filter id="Ellipse_6" x="0" y="0" width="63" height="63" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="3" result="blur"/> <feFlood flood-opacity="0.161"/> <feComposite operator="in" in2="blur"/> <feComposite in="SourceGraphic"/> </filter> </defs> <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_6)"> <circle id="Ellipse_6-2" data-name="Ellipse 6" cx="22.5" cy="22.5" r="22.5" transform="translate(9 6)" fill="#0b6288"/> </g> <path id="Path_47" data-name="Path 47" d="M95.975,29.082H88.227a9.09,9.09,0,0,0-9.08,9.08,8.965,8.965,0,0,0,8.1,8.988l.6,5.436a.558.558,0,0,0,1.013.257l3.886-5.6h3.224a9.08,9.08,0,1,0,0-18.159Zm0,17.043H92.458a.557.557,0,0,0-.458.24l-3.2,4.618-.491-4.42h0a.558.558,0,0,0-.532-.5A7.94,7.94,0,0,1,88.227,30.2h7.747a7.964,7.964,0,1,1,0,15.928Z" transform="translate(-60.146 -12.081)" fill="#0b6288" stroke="#fff" stroke-width="1"/> </svg></a></li>
+</ul>

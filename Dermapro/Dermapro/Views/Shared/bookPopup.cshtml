@@ -1,0 +1,100 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+
+<div class="modal fade bookPopup" id="bookPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="wrap">
+            <div class="bgimage">
+                <img class="fordesktop" loading="lazy" src="@Url.Content("~/Content/images/student_1.jpg")"/>
+                <img class="formobile" loading="lazy" src="@Url.Content("~/Content/images/student_2.jpg")"/>
+            </div>
+            <div class="inner">
+                <div class="exit" data-dismiss="modal"></div>
+                <div class="title">Book an E-Consulation</div>
+                <form>
+               <div class="holder">
+                <ul class="list">   <!-- missing class on div field -->
+                     
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_book1">Full name</label>
+                            <div class="field">
+                                <input class="custinput" id="input_book1" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="phone3">Mobile number</label>
+                            <div class="field">
+                                <input class="custinput" id="phone3" type="number" />
+                            </div>
+                        </div>
+                    </li>
+                  <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_book2">Email</label>
+                            <div class="field">
+                                <input class="custinput" id="input_book2" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" >Service</label>
+                            <div class="field arrow">
+                                <select class="custselect"><option>Service 1</option><option>Service 2</option></select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_book3">Preferred date</label>
+                            <div class="field calendar">
+                                <input class="custinput" id="input_book3" type="date" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_book4">Preferred time</label>
+                            <div class="field time">
+                                <input class="custinput" id="input_book4" type="time" />
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wide">
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_book5">Additional info</label>
+                            <div class="field textfield">
+                                <textarea class="custtextarea" id="input_book5"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="box_recaptcha">
+                   <img class="staticimage" loading="lazy" src="@Url.Content("~/Content/images/recaptcha.png")"/>
+               </div>
+                <div class="more">
+                    <button onclick="sendrequest()" type="button" class="custbtn white">send request</button>
+                </div>
+                   </div>
+            </form>
+            </div>
+               
+            <div class="txmssg">
+                <div class="mssgwrap">
+                    <div class="mssg1">Thank you</div>
+                    <div class="mssg2">We will review your request and get back to you s soon
+                    as possible with your confirmed appointment details.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

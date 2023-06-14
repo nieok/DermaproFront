@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Dermapro - Book a Service";
+    ViewBag.BodyAttributes = "class='bookPage'";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+
+<div class="Book">
+    <div class="container">
+        <div class="wrap">
+              <div class="holder wow">
+             <div class="head">
+                <h1 class="sectiontitle">Book a service with our experts</h1>
+            </div>
+             <div class="inner">
+                    <form>
+                <ul class="list">   <!-- missing class on div field -->
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" for="bookinp1">Full name</label>
+                            <div class="field">
+                                <input class="custinput" id="bookinp1" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" for="phone1">Mobile number</label>
+                            <div class="field">
+                                <input class="custinput" id="phone1" type="number" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" for="bookinp2">Email</label>
+                            <div class="field">
+                                <input class="custinput" id="bookinp2" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" >Service</label>
+                            <div class="field arrow">
+                                <select class="custselect">
+                                    <option>Service 1</option> <option>Service 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" for="bookinp3">Preferred date</label>
+                            <div class="field calendar">
+                                <input class="custinput" id="bookinp3" type="date" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField">
+                            <label class="custlabel" for="bookinp4">Preferred time</label>
+                            <div class="field time">
+                                <input class="custinput" id="bookinp4" type="time" />
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wide">
+                        <div class="inputField">
+                            <label class="custlabel" for="bookinp5">Additional info</label>
+                            <div class="field textfield">
+                                <textarea class="custtextarea" id="bookinp5"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+               <div class="box_recaptcha">
+                   <img class="staticimage" loading="lazy" src="@Url.Content("~/Content/images/recaptcha.png")"/>
+               </div>
+
+                <div class="more">
+                    <button onclick="booknow()" type="button" class="custbtn">send request</button>
+                </div>
+            </form>
+              </div>
+         </div>
+
+              <div class="txmssg">
+                <div class="mssgwrap">
+                    <div class="mssg1">Thank you</div>
+                    <div class="mssg2">We will review your request and get back to you s soon
+                    as possible with your confirmed appointment details.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

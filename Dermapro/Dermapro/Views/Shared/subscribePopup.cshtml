@@ -1,0 +1,70 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+
+<div class="modal fade subscribePopup" id="subscribePopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="wrap">
+            <div class="bgimage"><img loading="lazy" src="@Url.Content("~/Content/images/face.jpg")"/></div>
+            <div class="inner">
+                <div class="exit" data-dismiss="modal"></div>
+
+                <div class="title">Subscribe & discover our latest wellness news</div>
+
+
+                <form>
+               <div class="holder">
+                <ul class="list">   <!-- missing class on div field -->
+                              <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="subscrinput1">Email</label>
+                            <div class="field">
+                                <input class="custinput" id="subscrinput1" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="subscrinput2">Full name</label>
+                            <div class="field">
+                                <input class="custinput" id="subscrinput2" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="phone2">Mobile number</label>
+                            <div class="field">
+                                <input class="custinput" id="phone2" type="number" />
+                            </div>
+                        </div>
+                    </li>
+          
+                    
+                </ul>
+                    <div class="box_recaptcha">
+                   <img class="staticimage" loading="lazy" src="@Url.Content("~/Content/images/recaptcha.png")"/>
+               </div>
+                <div class="more">
+                    <button onclick="subscribe()" type="button" class="custbtn white">subscribe</button>
+                </div>
+                   </div>
+            </form>
+
+
+            </div>
+                <div class="txmssg">
+                <div class="mssgwrap">
+                    <div class="mssg1">Thank you</div>
+                    <div class="mssg2">We will review your request and get back to you s soon
+                    as possible with your confirmed appointment details.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

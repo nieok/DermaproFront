@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Dermapro - Server Error";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+
+
+<div class="Error">
+    <div class="container wow">
+        <h1 class="title">500</h1>
+        <h2 class="caption">Server Error!</h2>
+        <div class="hold">
+            <a class="custbtn" href="@Url.Content("~/home")"><span>Return to home</span></a>
+        </div>
+    </div>
+</div>
+

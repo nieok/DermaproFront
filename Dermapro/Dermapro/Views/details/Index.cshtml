@@ -1,0 +1,300 @@
+﻿@model  Dermapro.Models.servicesItem
+
+@{
+    ViewBag.Title = "Dermapro - Details";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+
+<div class="topPart v2">
+    <div class="bgimg">
+        <img class="fordesktop" alt="Face treatment" loading="lazy" src="@Model.bannerImage" />
+        <img class="formobile" alt="Face treatment" loading="lazy" src="@Model.bannerImage" />
+    </div>
+
+    <ul class="leftoptions">
+        <li><a onclick="history.back();" class="back"></a></li>
+    </ul>
+
+    <ul class="rightoptions">
+        <li>
+            <a class="sharebtn">
+                <i class="fa fa-share-alt"></i>
+                <div class="sharecontainer">
+                    <div data-network="twitter" class="st-custom-button"><i class="fa fa-twitter-square" aria-hidden="true"></i>Twitter</div>
+                    <div data-network="facebook" class="st-custom-button"><i class="fa  fa-facebook-square" aria-hidden="true"></i> Facebook</div>
+                    <div data-network="whatsapp" class="st-custom-button"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</div>
+                    <div data-network="sharethis" class="st-custom-button"><i class="fa fa-share-alt " aria-hidden="true"></i>More</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="holder wow">
+            <div class="icon"><img loading="lazy" src="@Model.LogoImage" /></div>
+            <h1 class="title">@Html.Raw(Model.title)</h1>
+            <div class="text">
+                @Html.Raw(Model.smalldescription)
+            </div>
+            <ul class="other">
+                <li><a href="@Url.Content("~/book")" class="custbtn white">book an appointment</a></li>
+                <li><a data-target="#bookPopup" data-toggle="modal" class="custbtn">get an e-consultation</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@if (Model.servicesDetails.Count > 0)
+{
+<div class="datalist v2">
+    <div class="container">
+        <ul class="grid">
+            @foreach (var item in Model.servicesDetails)
+            {
+            <li class="wow">
+                <a href="" class="item">
+                    <ul class="grp">
+                        <li>
+                            <div class="info">
+                                <h3 class="name">@Html.Raw(item.title)</h3>
+                                <div class="text">
+                                    @Html.Raw(item.smalldescription)
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pic"><img loading="lazy" src="@item.Image" alt="@item.title" /></div>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+}
+
+
+<div class="Treatment">
+    <div class="container wow">
+        <div class="head">
+            <h3 class="title">@Html.Raw(Model.treatabletitle)</h3>
+        </div>
+        <div class="info">
+            @*<div class="caption">Interact with areas for more details.</div>*@
+            <div class="text">
+                @Html.Raw(Model.treatabledescription)
+            </div>
+        </div>
+        @if (Model.servicesTreatableAreaItem.Count > 0)
+        {
+        <ul class="list">
+            @foreach (var item in Model.servicesTreatableAreaItem)
+            {
+            <li><a class="item">@Html.Raw(item.title)</a></li>
+            }
+       
+        </ul>
+        }
+    </div>
+</div>
+
+
+@if (Model.servicesGalleryItem.Count > 0)
+{
+<div class="Transform">
+    <div class="inner">
+        <div class="container wow">
+            <div class="wrap">
+                <div class="head">
+                    <h3 class="title">The transformations</h3>
+                </div>
+                <div class="holder">
+                    <div class="screen">
+                        <ul class="swiper-wrapper">
+                            @foreach (var item in Model.servicesGalleryItem)
+                            {
+                            <li class="swiper-slide">
+                                <ul class="grp">
+                                    <li>
+                                        <a class="item">
+                                            <div class="pic"><img loading="lazy" alt="@item.beforeImage" src="@item.beforeImage" /></div>
+                                            <div class="info">
+                                                <div class="caption">Before</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="item">
+                                            <div class="pic"><img loading="lazy" alt="@item.AfterImage" src="@item.AfterImage" /></div>
+                                            <div class="info">
+                                                <div class="caption">After</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            }
+                       
+                        </ul>
+                    </div>
+                    <div class="controls">
+                        <div class="custprev"></div>
+                        <div class="custnext"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@if (Model.servicesFAQItem.Count > 0)
+{
+<div class="faq">
+    <div class="inner wow">
+        <div class="head">
+            <div class="container">
+                <div class="holder">
+                    <h4 class="title">You frequently asked</h4>
+                    <div class="more">
+                        <a data-target="#askQuestion" data-toggle="modal" class="link">ask a question</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="bgimg">
+                <img class="fordesktop" alt="surgery" loading="lazy" src="@Url.Content("~/Content/images/surgery_1.jpg")" />
+                <img class="formobile" alt="surgery" loading="lazy" src="@Url.Content("~/Content/images/surgery_2.jpg")" />
+            </div>
+
+            <div class="outer">
+                <div class="container">
+                    <div class="screen">
+                        <ul class="swiper-wrapper">
+                            @foreach (var item in Model.servicesFAQItem)
+                            {
+                            <li class="swiper-slide">
+                                <a class="item">
+                                    <div class="hold">
+                                        <h6 class="name">@Html.Raw(item.title)</h6>
+                                        <div class="text">
+                                          @Html.Raw(item.description)
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            }
+                        
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inside">
+                    <div class="container">
+                        <div class="in">
+                            <div class="controls">
+                                <div class="custprev white"></div>
+                                <div class="custnext white"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@if (Model.servicesDoctorItem.Count > 0)
+{
+<div class="ourteam">
+    <div class="inner wow">
+        <div class="top">
+            <h5 class="title">Our Experts</h5>
+        </div>
+        <div class="screen">
+            <ul class="swiper-wrapper">
+                @foreach (var item in Model.servicesDoctorItem)
+                {
+                <li class="swiper-slide">
+                    <a class="item">
+                        <div class="pic"><img loading="lazy" alt="@item.title" src="@item.image" /></div>
+                        <div class="info">
+                            <div class="name">@Html.Raw(item.title)</div>
+                            <div class="caption">@Html.Raw(item.position)</div>
+                        </div>
+                    </a>
+                </li>
+                }
+            
+            </ul>
+        </div>
+        <div class="end">
+            <div class="container">
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+}
+
+@if (Model.servicesPackageItem.Count > 0)
+{
+<div class="Offer">
+    <!-- loading class on div Offer-->
+    <div class="container">
+        <div class="head">
+            <h5 class="title">Related packages</h5>
+        </div>
+        <div class="wrap">
+            <ul class="list">
+                @foreach (var item in Model.servicesPackageItem)
+                {
+                <li class="unit wow">
+                    <a href="@item.Link" class="item">
+                        <div class="info">
+                            <div class="caption">@Html.Raw(item.title)</div>
+                            <div class="value">@Html.Raw(item.Price)</div>
+                            <div class="text">@Html.Raw(item.SmallDescription)</div>
+                        </div>
+                        <div class="more">
+                            <div class="link">learn more</div>
+                        </div>
+                    </a>
+                </li>
+                }
+              
+            </ul>
+        </div>
+    </div>
+</div>
+}
+
+
+<div class="Consult">
+    <div class="inner wow">
+        <ul class="cols">
+            <li>
+                <div class="info">
+                    <div class="caption">Not sure if this treatment is right for you?</div>
+                    <div class="text">Talk with one of our experts to ask questions and determine which service is right for you</div>
+                </div>
+                <div class="more">
+                    <a href="@Url.Content("~/book")" class="link">book a free consultation</a>
+                </div>
+            </li>
+            <li>
+                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/room.jpg")" alt="treatment" /></div>
+            </li>
+        </ul>
+    </div>
+</div>

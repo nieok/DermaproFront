@@ -1,0 +1,85 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+
+<div class="modal fade askQuestion" id="askQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="wrap">
+            <div class="bgimage">
+                <img class="fordesktop" loading="lazy" src="@Url.Content("~/Content/images/student_1.jpg")"/>
+                <img class="formobile" loading="lazy" src="@Url.Content("~/Content/images/student_2.jpg")"/>
+            </div>
+            <div class="inner">
+                <div class="exit" data-dismiss="modal"></div>
+                <div class="title">Ask a Question</div>
+                <form>
+               <div class="holder">
+                <ul class="list">   <!-- missing class on div field -->
+                     
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_quest1">Full name</label>
+                            <div class="field">
+                                <input class="custinput" id="input_quest1" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="phone4">Mobile number</label>
+                            <div class="field">
+                                <input class="custinput" id="phone4" type="number" />
+                            </div>
+                        </div>
+                    </li>
+                  <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_quest2">Email</label>
+                            <div class="field">
+                                <input class="custinput" id="input_quest2" type="text" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputField blue">
+                            <label class="custlabel" >Service</label>
+                            <div class="field arrow">
+                                <select class="custselect"><option>Service 1</option><option>Service 2</option></select>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="wide">
+                        <div class="inputField blue">
+                            <label class="custlabel" for="input_quest3">Question</label>
+                            <div class="field textfield">
+                                <textarea class="custtextarea" id="input_quest3"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="box_recaptcha">
+                   <img class="staticimage" loading="lazy" src="@Url.Content("~/Content/images/recaptcha.png")"/>
+               </div>
+                <div class="more">
+                    <button onclick="submitquestion()" type="button" class="custbtn white">ask question</button>
+                </div>
+                   </div>
+            </form>
+            </div>
+               
+            <div class="txmssg">
+                <div class="mssgwrap">
+                    <div class="mssg1">Thank you</div>
+                    <div class="mssg2">We will review your question and get back to you s soon
+                    as possible.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

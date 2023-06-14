@@ -1,0 +1,89 @@
+﻿@model  Dermapro.Models.servicesPage
+@{
+    ViewBag.Title = "Dermapro - Treatments";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+
+<div class="topPart">
+    <div class="bgimg">
+        <img class="fordesktop" alt="@Model.title" loading="lazy" src="@Model.bannerImage" />
+        <img class="formobile" alt="@Model.title" loading="lazy" src="@Model.bannerImage" />
+    </div>
+    <div class="container">
+        <div class="holder wow">
+            <div class="icon"><img loading="lazy" alt="@Model.title" src="@Model.LogoImage" /></div>
+            <h1 class="title">@Html.Raw(Model.title)</h1>
+            <div class="text">
+                @Html.Raw(Model.smalldescription)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="tabmenu">
+    <div class="screen">
+        <ul class="swiper-wrapper">
+            @{ 
+                int count = 1;
+            }
+            @foreach (var item in Model.typeServices)
+            {
+            <li class="swiper-slide"><a id="Type_@item.id" onclick="switchType(@item.id)" class="link @(count==1?"selected":"") typeOption">@Html.Raw(item.title)</a></li>
+                count++;
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div class="itemlisting">
+    <!-- "loading" class on itemlisting -->
+    <div class="container">
+            @{ 
+                int countItem = 1;
+            }
+            @foreach (var item in Model.typeServices)
+            {
+                <ul class="grid @(countItem==1?"selected":"") ServiceListing" id="forType_@item.id">
+                    @foreach (var details in item.servicesListing)
+                    {
+                        <li class="wow">
+                            <div class="item">
+                                <div class="pic">
+                                    <img alt="treatment" loading="lazy" alt="@Html.Raw(details.title)" src="@details.image" />
+                                    <div class="holder">
+                                        <h2 class="name">@Html.Raw(details.title)</h2>
+                                    </div>
+                                </div>
+                                <div class="pop">
+                                    <div class="inside">
+                                        <div class="inner">
+                                            <div class="in">
+                                                <h2 class="caption">@Html.Raw(details.title)</h2>
+                                                <div class="text">@Html.Raw(details.description)</div>
+                                                <a href="@details.link" class="more"><span>learn more</span></a>
+                                                <div class="cloze"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="boxlink fordesktop" href="@details.link"></a>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+                countItem++;
+            }
+        
+       
+        </div>
+</div>

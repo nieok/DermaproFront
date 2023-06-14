@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Dermapro - Article";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+<h1 class="hiddenHeader">Dermapro Article</h1>
+
+<div class="Article">
+    <div class="container">
+        <a class="back" href="@Url.Content("~/blog")"></a>
+        <div class="top wow">
+        <div class="category">
+            <div class="box">
+                <h3 class="name">skincare</h3>
+            </div>
+        </div>
+        <h2 class="title">
+            Dermapro Introduces Its New Clinics, Detox & Wellness Center
+        </h2>
+         </div>
+        <div class="inner">
+        <div class="picslide wow">
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy"  alt="event" src="@Url.Content("~/Content/images/event1.jpg")"/></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy"  alt="event" src="@Url.Content("~/Content/images/event1.jpg")"/></div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="item">
+                            <div class="pic"><img loading="lazy"  alt="event" src="@Url.Content("~/Content/images/event1.jpg")"/></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="info wow">
+            <div class="date">12 JAN 2023</div>
+            <div class="text">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet.
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea 
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor 
+                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+            </div>
+        </div>
+
+            <ul class="more">
+                <li><a class="share">
+                    <i class="fa fa-share-alt"></i>
+                            <div class="sharecontainer">
+                            <div data-network="twitter" class="st-custom-button"><i class="fa fa-twitter-square" aria-hidden="true"></i>Twitter</div>
+                             <div data-network="facebook" class="st-custom-button"><i class="fa  fa-facebook-square" aria-hidden="true"></i> Facebook</div>
+                                <div data-network="whatsapp" class="st-custom-button"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</div>
+                               <div data-network="sharethis" class="st-custom-button"><i class="fa fa-share-alt " aria-hidden="true"></i>More</div>                     
+                              </div>
+                    </a>
+                </li>
+            </ul>
+
+        <div class="facbkBox">
+            <img class="staticimage" loading="lazy" src="@Url.Content("~/Content/images/facebookplugin.jpg")"/>
+        </div>
+         </div>
+
+    </div>
+</div>
+

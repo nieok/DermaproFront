@@ -1,0 +1,362 @@
+﻿@{
+    ViewBag.Title = "Dermapro - About";
+    ViewBag.BodyAttributes = "class=''";
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+<h1 class="hiddenHeader">Dermapro About</h1>
+
+<div class="subslide">
+     <div class="screen">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="@Url.Content("~/article")" class="item">
+                            <div class="pic">
+                              <img class="fordesktop" loading="lazy" src="@Url.Content("~/Content/images/twin_1.jpg")"/>
+                              <img class="formobile" loading="lazy" src="@Url.Content("~/Content/images/twin_2.jpg")"/>
+                            </div>
+                           <div class="data">
+                             <div class="container">
+                                  <div class="info">
+                                    <h2 class="subcaption">“We at Dermapro, are committed to the care and improvement of human life.
+                                      We strive to deliver a complete
+                                      range of high quality medical and wellness solutions to
+                                               individuals of all ages, because we understand the complex
+                                        interactions of body, mind and soul as one”</h2>
+                                   <div class="sublabel">
+                                       Dr. Sonia Rahbani
+                                   </div>
+              
+                                 </div>
+                              </div>
+                          </div>
+                        </a>
+                    </li>
+
+           </ul>
+         <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+
+<div class="secondmenu">
+    <div class="screen">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a class="link selected">our story</a></li>
+             <li class="swiper-slide"><a class="link">meet the founder</a></li>
+             <li class="swiper-slide"><a class="link">locations</a></li>
+             <li class="swiper-slide"><a class="link">as featured on</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<ul class="aboutsections">
+    <li class="subsection">
+
+        <div class="datalist">
+            <div class="container">
+            <ul class="grid">
+                <li class="wow">
+                    <a href="" class="item">
+                        <ul class="grp">
+                            <li>
+                                <div class="info">
+                                    <h3 class="name">We are a<br/> multidisciplinary medical, aesthetic and anti-aging clinic.</h3>
+                                    <div class="text">
+                                        With a history of success and a network of sister companies, we provide you with a comprehensive approach to rejuvenation and anti-aging. Proactive rather than reactive, we are at the forefront of new technologies and specialties.
+                                        We are here to enhance people’s lifestyle and overall wellbeing through our diversified services.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/story1.jpg")" alt="story"/></div>
+                            </li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="wow">
+                    <a href="" class="item">
+                        <ul class="grp">
+                            <li>
+                                <div class="info">
+                                    <h3 class="name">Our services are distinctive because they are unique, innovative and continuous.</h3>
+                                    <div class="text">
+                                       A dedicated strong team of doctors, pharmacists, dietitians, physiotherapists, and cosmetic
+                                        professionals, with their commitment to every client, is our greatest asset. Our main goal
+                                        is to look after all patients and customers, offering the highest standards of care at all time.
+                                    </div>
+
+                                    <ul class="specs">
+                                        <li>
+                                            <div class="unit">
+                                                <div class="icon"><img loading="lazy" src="@Url.Content("~/Content/images/icon_dermapro1.png")" /></div>
+                                                <h4 class="subname">Dermapro Beauty</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="unit">
+                                                <div class="icon"><img loading="lazy" src="@Url.Content("~/Content/images/icon_dermapro2.png")" /></div>
+                                                <h4 class="subname">Dermapro Wellness</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="unit">
+                                                <div class="icon"><img loading="lazy" src="@Url.Content("~/Content/images/icon_dermapro3.png")" /></div>
+                                                <h4 class="subname">Dermapro Spa</h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="unit">
+                                                <div class="icon"><img loading="lazy" src="@Url.Content("~/Content/images/icon_dermapro4.png")" /></div>
+                                                <h4 class="subname">Dermapro Fitness</h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/story2.jpg")" alt="story"/></div>
+                            </li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+
+        <div class="Sponsors">
+            <div class="container wow">
+                <div class="screen">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor1.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor2.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor3.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor4.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor5.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a class="item">
+                                <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/sponsor6.png")" alt="sponsor"/></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </li>
+    <li class="subsection">
+        <div class="Founder">
+            <div class="container wow">
+                <ul class="grp">
+                    <li>
+                        <div class="data">
+                            <h4 class="name">Dr Sonia Rahbani</h4>
+                            <div class="text">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                         <div class="pic"><img loading="lazy" src="@Url.Content("~/Content/images/founder.jpg")" alt="founder"/></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </li>
+    <li class="subsection">
+
+        <div class="findus">
+            <div class="container wow">
+                <div class="top">
+                    <h5 class="title">Find us</h5>
+                </div>
+                <div class="wrap">
+                <div class="bgimg">
+                    <img class="fordesktop" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/bghouse_1.jpg")"/>
+                   <img class="formobile" alt="Face treatment" loading="lazy" src="@Url.Content("~/Content/images/bghouse_2.jpg")"/>
+                 </div>
+                    <ul class="grp">
+                        <li>
+                            <div class="head">
+                                <div class="subtitle">Downtown</div>
+                            </div>
+
+                            <ul class="data">
+                                <li>
+                                    <div class="item">
+                                        <div class="icon"><i class="fa fa-map-marker"></i></div>
+                                        <div class="subtext">Georges Haddad Street, Saifi Village Beirut
+                                        Central District Beirut – Lebanon
+                                        </div>
+                                    </div>
+                                </li>
+                
+                                <li>
+                                    <div class="item">
+                                        <div class="icon"><i class="fa fa-envelope"></i></div>
+                                        <div class="subtext">
+                                            <a href="mailto:info@dermapro.me">info@dermapro.me</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <div class="icon"><i class="fa fa-phone"></i></div>
+                                        <div class="subtext">
+                                            <a class="call" href="tel:961975544">+961-1-975544</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                   <li>
+                                    <div class="item">
+                                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20.998" viewBox="0 0 21 20.998"> <path id="Icon_ionic-ios-clock" data-name="Icon ionic-ios-clock" d="M21.3,6.449a10.5,10.5,0,1,0,0,14.85A10.5,10.5,0,0,0,21.3,6.449ZM5.474,14.268a.4.4,0,1,1,.318-.318A.4.4,0,0,1,5.474,14.268ZM6.8,18.417a.4.4,0,1,1,.116-.429A.4.4,0,0,1,6.8,18.417ZM6.913,9.76A.4.4,0,1,1,6.8,9.331.4.4,0,0,1,6.913,9.76Zm3.1,11.584a.4.4,0,1,1-.116-.429A.4.4,0,0,1,10.017,21.344ZM9.9,6.833a.4.4,0,1,1,.116-.429A.4.4,0,0,1,9.9,6.833Zm1.787,3.851a.4.4,0,0,1,.692-.419l1.7,3.145a1.636,1.636,0,0,1,.2.767v6.158a.4.4,0,1,1-.808,0V14.177a.831.831,0,0,0-.1-.384Zm2.266,12.064a.4.4,0,1,1,.318-.318A.4.4,0,0,1,13.954,22.748Zm0-16.96a.4.4,0,1,1,.318-.318A.4.4,0,0,1,13.954,5.788Zm4.427,15.733a.4.4,0,1,1,.116-.429A.4.4,0,0,1,18.381,21.521ZM18.5,6.656a.4.4,0,1,1-.116-.429A.4.4,0,0,1,18.5,6.656ZM21.6,18.24a.4.4,0,1,1-.116-.429A.4.4,0,0,1,21.6,18.24Zm-.116-8.3a.4.4,0,1,1,.116-.429A.4.4,0,0,1,21.485,9.937Zm.949,4.331a.4.4,0,1,1,.318-.318A.4.4,0,0,1,22.434,14.268Z" transform="translate(-3.372 -3.375)" fill="#fff"/> </svg></div>
+                                        <div class="subtext">MON-SAT 8:00AM to 7:00 PM
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="more">
+                                <a href="" class="custbtn white">get directions</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <div class="subtitle">Sister Company</div>
+                                <div class="caption">Rahbani Clinics</div>
+                            </div>
+                               <ul class="data">
+                                <li>
+                                    <div class="item">
+                                        <div class="icon"><i class="fa fa-map-marker"></i></div>
+                                        <div class="subtext">Byblos – Jounieh Highway Sfeir Center 3rd & 4th floor Byblos - Lebanon
+                                        </div>
+                                    </div>
+                                </li>
+                                     <li>
+                                    <div class="item">
+                                        <div class="icon"><i class="fa fa-phone"></i></div>
+                                        <div class="subtext">
+                                            <a class="call" href="tel:961975544">+961-1-975544</a>
+                                        </div>
+                                    </div>
+                                </li>
+                             </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </li>
+   <li class="subsection">
+
+        <div class="otheritems">
+            <div class="container wow">
+            <div class="top">
+                <h5 class="title">As featured on</h5>
+            </div>
+            <div class="screen">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="articleList">
+                          <a href="@Url.Content("~/article")" class="item">
+                    <div class="pic"> <img loading="lazy" src="@Url.Content("~/Content/images/clinic1.jpg")" alt="news"/></div>
+                  <div class="info">
+                    <div class="hold">
+                         <div class="category">skincare</div>
+                     </div>
+                      <h6 class="name">Dermapro Introduces Its New Clinics, Detox & Wellness Center</h6>
+                      <div class="text">Lorem ipsum dolor sit amet, consetetur elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea </div>
+                  </div>
+                  <div class="more">
+                      <div class="custbtn transparent">read more</div>
+                  </div>
+                          </a>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="articleList">
+                          <a href="@Url.Content("~/article")" class="item">
+                    <div class="pic"> <img loading="lazy" src="@Url.Content("~/Content/images/clinic2.jpg")" alt="news"/></div>
+                  <div class="info">
+                    <div class="hold">
+                         <div class="category">skincare</div>
+                     </div>
+                      <h6 class="name">Dermapro Introduces Its New Clinics, Detox & Wellness Center</h6>
+                      <div class="text">Lorem ipsum dolor sit amet, consetetur elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea </div>
+                  </div>
+                  <div class="more">
+                      <div class="custbtn transparent">read more</div>
+                  </div>
+                          </a>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="articleList">
+                          <a href="@Url.Content("~/article")" class="item">
+                    <div class="pic"> <img loading="lazy" src="@Url.Content("~/Content/images/clinic3.jpg")" alt="news"/></div>
+                  <div class="info">
+                    <div class="hold">
+                         <div class="category">skincare</div>
+                     </div>
+                      <h6 class="name">Dermapro Introduces Its New Clinics, Detox & Wellness Center</h6>
+                      <div class="text">Lorem ipsum dolor sit amet, consetetur elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea </div>
+                  </div>
+                  <div class="more">
+                      <div class="custbtn transparent">read more</div>
+                  </div>
+                          </a>
+                        </div>
+                    </li>
+                             <li class="swiper-slide">
+                        <div class="articleList">
+                          <a href="@Url.Content("~/article")" class="item">
+                    <div class="pic"> <img loading="lazy" src="@Url.Content("~/Content/images/clinic4.jpg")" alt="news"/></div>
+                  <div class="info">
+                    <div class="hold">
+                         <div class="category">skincare</div>
+                     </div>
+                      <h6 class="name">Dermapro Introduces Its New Clinics, Detox & Wellness Center</h6>
+                      <div class="text">Lorem ipsum dolor sit amet, consetetur elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea </div>
+                  </div>
+                  <div class="more">
+                      <div class="custbtn transparent">read more</div>
+                  </div>
+                          </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+       </div>
+    </li>
+</ul>
